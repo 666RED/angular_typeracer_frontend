@@ -2,7 +2,7 @@
 nixPkgs = ["nodejs_22"]
 
 [phases.setup.env]
-NODE_VERSION = "22.12.0"
+NODE_VERSION = "22.18.0"
 
 [phases.build]
 cmds = ["npm ci", "npm run build"]
