@@ -1,0 +1,7 @@
+<button matButton type="submit" [disabled]="isDisabled() || processing()">
+  @if(processing()) {
+  <mat-spinner></mat-spinner>
+  }@else {
+  {{ text() }}
+  }
+</button>

@@ -1,0 +1,17 @@
+<div class="flex items-center justify-between border-b border-b-secondary px-4 py-2">
+  <a routerLink="/">Typeracer</a>
+  <nav>
+    <ul class="flex items-center gap-2">
+      @if(user() === null) {
+      <li><a routerLink="auth/register">Register</a></li>
+      <li><a routerLink="auth/login">Login</a></li>
+      }@else if(user() === undefined) {
+      <ngx-skeleton-loader appearance="circle"></ngx-skeleton-loader>
+      <ngx-skeleton-loader appearance="circle"></ngx-skeleton-loader>
+      }@else {
+      <li><a routerLink="user/profile">Profile</a></li>
+      <li><button (click)="logout()">Logout</button></li>
+      }
+    </ul>
+  </nav>
+</div>

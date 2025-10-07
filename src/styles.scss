@@ -1,1 +1,141 @@
-/* You can add global styles to this file, and also import other style files */
+// Include theming for Angular Material with `mat.theme()`.
+// This Sass mixin will define CSS variables that are used for styling Angular Material
+// components according to the Material 3 design spec.
+// Learn more about theming and how to use it for your application's
+// custom components at https://material.angular.dev/guide/theming
+@use '@angular/material' as mat;
+@use './styles.css';
+
+@layer base {
+  h1 {
+    font-size: 2rem;
+    line-height: 2.4rem;
+  }
+  h2 {
+    font-size: 1.75rem;
+    line-height: 2.25rem;
+  }
+  h3 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+  h4 {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+  h5 {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+  h6 {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+
+  @media (min-width: 768px) {
+    h1 {
+      font-size: 3rem;
+      line-height: 3.2rem;
+    }
+    h2 {
+      font-size: 2.25rem;
+      line-height: 2.75rem;
+    }
+    h3 {
+      font-size: 1.875rem;
+      line-height: 2.375rem;
+    }
+    h4 {
+      font-size: 1.5rem;
+      line-height: 2rem;
+    }
+    h5 {
+      font-size: 1.125rem;
+      line-height: 1.625rem;
+    }
+    h6 {
+      font-size: 1rem;
+      line-height: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    h1 {
+      font-size: 4rem;
+      line-height: 4.2rem;
+    }
+    h2 {
+      font-size: 3rem;
+      line-height: 3.4rem;
+    }
+    h3 {
+      font-size: 2.125rem;
+      line-height: 2.6rem;
+    }
+    h4 {
+      font-size: 1.75rem;
+      line-height: 2.25rem;
+    }
+    h5 {
+      font-size: 1.25rem;
+      line-height: 1.75rem;
+    }
+    h6 {
+      font-size: 1.125rem;
+      line-height: 1.5rem;
+    }
+  }
+}
+
+html {
+  @include mat.theme(
+    (
+      color: (
+        primary: mat.$cyan-palette,
+        tertiary: mat.$orange-palette,
+      ),
+      typography: Roboto,
+      density: 0,
+    )
+  );
+}
+
+body {
+  // Default the application to a light color theme. This can be changed to
+  // `dark` to enable the dark color theme, or to `light dark` to defer to the
+  // user's system settings.
+  color-scheme: light dark;
+
+  // Set a default background, font and text colors for the application using
+  // Angular Material's system-level CSS variables. Learn more about these
+  // variables at https://material.angular.dev/guide/system-variables
+  background-color: var(--mat-sys-surface);
+  color: var(--mat-sys-on-surface);
+  font: var(--mat-sys-body-medium);
+
+  // Reset the user agent margin.
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+}
+
+a,
+button {
+  cursor: pointer;
+}
+
+// input {
+//   outline: 1px solid #ffffff;
+//   border: none;
+//   border-radius: 0.75rem;
+//   padding-block: 0.75rem;
+//   text-indent: 0.5rem;
+//   padding-right: 0.5rem;
+// }

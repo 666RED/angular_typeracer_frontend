@@ -1,0 +1,15 @@
+<form
+  (submit)="handleJoinRoom($event)"
+  class="flex w-full max-w-sm items-center gap-2"
+  autoComplete="off"
+>
+  <input
+    matInput
+    type="text"
+    placeholder="Enter Room ID"
+    name="room-number"
+    required
+    [formControl]="roomId"
+  />
+  <button matButton type="submit" class="min-w-20 px-2">Join</button>
+</form>

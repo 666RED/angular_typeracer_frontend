@@ -1,0 +1,55 @@
+<form (submit)="createNewRoom($event)" [formGroup]="createNewRoomForm" class="min-w-lg">
+  <h2 mat-dialog-title>Create new room</h2>
+  <mat-dialog-content>
+    <div class="flex flex-col gap-y-6 py-2">
+      <!-- ROOM ID -->
+      <div class="grid-column">
+        <label for="new-room-id"> Room ID </label>
+        <input
+          matInput
+          type="text"
+          readonly
+          name="new-room-id"
+          id="new-room-id"
+          class="text-sm"
+          formControlName="roomId"
+          required
+        />
+      </div>
+      <!-- ROOM NAME -->
+      <div class="grid-column">
+        <label for="room-name">Name</label>
+        <input
+          type="text"
+          matInput
+          name="room-name"
+          id="room-name"
+          required
+          maxlength="50"
+          placeholder="Enter room name"
+          autofocus
+          formControlName="roomName"
+        />
+      </div>
+      <!-- PLAYER COUNT -->
+      <div class="grid-column">
+        <label for="player-count"># Players</label>
+        <mat-select formControlName="playerCount" id="player-count" name="player-count" required>
+          <mat-option value="2">2</mat-option>
+          <mat-option value="3">3</mat-option>
+          <mat-option value="4">4</mat-option>
+          <mat-option value="5">5</mat-option>
+        </mat-select>
+      </div>
+      <!-- PUBLIC / PRIVATE -->
+      <div class="grid-column">
+        <label for="private">Private</label>
+        <mat-slide-toggle formControlName="private" name="private" id="private"></mat-slide-toggle>
+      </div>
+    </div>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button type="submit" matButton [disabled]="createNewRoomForm.invalid">Create</button>
+    <button matButton mat-dialog-close>Close</button>
+  </mat-dialog-actions>
+</form>

@@ -1,0 +1,9 @@
+@import 'tailwindcss';
+
+.grid-column {
+  @apply grid grid-cols-3 gap-x-4 items-center;
+
+  & > :not(label) {
+    @apply col-span-2;
+  }
+}

@@ -1,0 +1,31 @@
+<form class="grid gap-6" (submit)="handleSubmit($event)">
+  <mat-form-field [className]="fieldStyle">
+    <mat-label>Email</mat-label>
+    <input
+      type="email"
+      placeholder="Email"
+      name="email"
+      required
+      id="email"
+      [formControl]="email"
+      matInput
+    />
+  </mat-form-field>
+  <mat-form-field [className]="fieldStyle">
+    <mat-label>Password</mat-label>
+    <input
+      type="password"
+      placeholder="Password"
+      name="password"
+      required
+      id="password"
+      [formControl]="password"
+      matInput
+    />
+  </mat-form-field>
+  <app-form-submit-button
+    text="Login"
+    [processing]="processing()"
+    [isDisabled]="email.value === '' || password.value === ''"
+  />
+</form>
