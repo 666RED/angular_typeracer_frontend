@@ -1,6 +1,6 @@
 import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
-import { environment } from '@src/environments/environment.development';
+import { environment } from '@src/environments/environment';
 
 @Injectable({ providedIn: 'root' })
 export class ApiService {
