@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://api.laravel-react-typeracer.online:3000',
+  apiUrl: 'https://api.laravel-react-typeracer.online',
 };
